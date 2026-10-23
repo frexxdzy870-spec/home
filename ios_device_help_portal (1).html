@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f7fc">
+<title>iOS Help Hub — Web & Device Tools</title>
+<style>
+:root{--blue:#0878ff;--ink:#101828;--muted:#66758d;--glass:rgba(255,255,255,.84);--line:#e7edf6}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#d7eaff 0,transparent 34%),linear-gradient(160deg,#f8faff,#edf3fb 60%,#f9fbff);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:var(--ink)}
+.wrap{max-width:650px;margin:auto;padding:env(safe-area-inset-top) 16px calc(30px + env(safe-area-inset-bottom))}
+.status{display:flex;justify-content:space-between;padding:12px 7px 17px;font-size:14px;font-weight:750}
+.address{height:43px;border-radius:15px;background:#e3eaf5c9;display:flex;align-items:center;justify-content:center;gap:8px;color:#52627a;margin-bottom:18px;font-size:14px}
+.top{display:flex;align-items:center;gap:12px;padding:14px;background:var(--glass);border:1px solid white;border-radius:23px;box-shadow:0 9px 25px #3557800b}
+.logo{height:48px;width:48px;border-radius:16px;background:linear-gradient(145deg,#5cc6ff,#1265f7);display:grid;place-items:center;color:white;font-size:25px;box-shadow:0 6px 14px #0878ff35}
+.brand{font-size:19px;font-weight:800;letter-spacing:-.5px}.tagline{font-size:12px;color:var(--muted);margin-top:3px}.menu{margin-left:auto;border:0;border-radius:13px;background:#edf3fc;padding:11px 13px;font-size:20px;color:var(--ink)}
+.hero{margin:18px 0 20px;padding:24px 22px;border-radius:27px;background:linear-gradient(125deg,#e3f3ff,#cce5ff 68%,#a7d2ff);position:relative;overflow:hidden}
+.eyebrow{font-size:11px;letter-spacing:1.1px;font-weight:800;color:#1264c9}.hero h1{font-size:31px;line-height:1.08;letter-spacing:-1px;margin:11px 0}.hero p{font-size:14px;line-height:1.55;color:#466384;max-width:460px;margin:0}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:22px 3px 11px}.section-head h2{font-size:18px;letter-spacing:-.4px;margin:0}.section-head span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.tile{display:flex;flex-direction:column;align-items:flex-start;text-align:left;color:inherit;min-height:125px;padding:15px;border-radius:22px;background:var(--glass);border:1px solid white;box-shadow:0 7px 20px #3557800a;text-decoration:none;cursor:pointer;transition:transform .15s;font:inherit}
+.tile:active{transform:scale(.98)}.ico{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;color:white;font-size:21px;margin-bottom:11px;background:linear-gradient(145deg,#61c6ff,#1871fa);box-shadow:0 5px 12px #0878ff25}
+.tile:nth-child(3n+2) .ico{background:linear-gradient(145deg,#8c9cff,#5b55e9)}.tile:nth-child(3n) .ico{background:linear-gradient(145deg,#5edcb2,#21ae83)}
+.tile strong{font-size:14px;margin-bottom:5px}.tile small{font-size:12px;line-height:1.4;color:var(--muted)}
+.panel{display:none;margin-top:16px;padding:16px;border-radius:22px;background:var(--glass);border:1px solid white;box-shadow:0 7px 20px #3557800a}.panel.show{display:block}.panel h3{margin:0 0 10px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:13px;background:var(--blue);color:white;font-weight:700;padding:11px 14px;cursor:pointer;font-size:13px}.btn.secondary{background:#e7effb;color:#24507f}.search{display:flex;gap:8px;margin:10px 0}.search input{min-width:0;flex:1;border:1px solid #dbe5f2;border-radius:13px;padding:12px;font:inherit;background:white;color:var(--ink)}.hint{font-size:12px;color:var(--muted);line-height:1.5}.preview{display:block;width:100%;max-height:330px;object-fit:contain;background:#e9f0fa;border-radius:16px;margin-top:12px}.filelist{font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.notice{display:flex;gap:11px;margin-top:17px;padding:15px;border-radius:20px;background:#e8f2ffb8;border:1px solid #fff}.info{flex:0 0 29px;height:29px;display:grid;place-items:center;background:#cde3ff;color:#0969e8;border-radius:10px;font-weight:800}.notice strong{font-size:13px}.notice p{font-size:12px;line-height:1.5;color:#536984;margin:4px 0 0}
+.bottom{margin-top:20px;text-align:center;color:#8a98ad;font-size:11px;line-height:1.6}
+@media(min-width:500px){.wrap{padding-top:20px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:28px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <div class="status"><span id="clock">09:41</span><span>▮▮▮　◉　▰</span></div>
+ <div class="address">🔒　iOS Help Hub　↻</div>
+ <header class="top"><div class="logo">◉</div><div><div class="brand">iOS Help Hub</div><div class="tagline">Web apps, shortcuts & device tools</div></div><button class="menu" aria-label="Ke menu" onclick="document.getElementById('shortcuts').scrollIntoView({behavior:'smooth'})">☰</button></header>
+ <section class="hero"><div class="eyebrow">YOUR PERSONAL WEB LAUNCHER</div><h1>Semua pintasan,<br>satu tempat.</h1><p>Buka situs favorit, mainkan game web, atau gunakan kamera dan pilih file dari browser. Dibuat responsif untuk iPhone.</p></section>
+
+ <div class="section-head"><h2>Web & Sosial</h2><span>Tap untuk membuka</span></div>
+ <section class="grid" id="shortcuts">
+  <a class="tile" href="https://www.youtube.com/" target="_blank" rel="noopener"><div class="ico">▶</div><strong>YouTube</strong><small>Video, Shorts, musik</small></a>
+  <a class="tile" href="https://www.google.com/" target="_blank" rel="noopener"><div class="ico">G</div><strong>Google</strong><small>Search dan web</small></a>
+  <a class="tile" href="https://www.instagram.com/" target="_blank" rel="noopener"><div class="ico">◎</div><strong>Instagram</strong><small>Foto dan Reels</small></a>
+  <a class="tile" href="https://www.tiktok.com/" target="_blank" rel="noopener"><div class="ico">♪</div><strong>TikTok</strong><small>Video pendek</small></a>
+  <a class="tile" href="https://www.facebook.com/" target="_blank" rel="noopener"><div class="ico">f</div><strong>Facebook</strong><small>Teman dan komunitas</small></a>
+  <a class="tile" href="https://web.whatsapp.com/" target="_blank" rel="noopener"><div class="ico">✆</div><strong>WhatsApp Web</strong><small>Chat melalui browser</small></a>
+  <a class="tile" href="https://x.com/" target="_blank" rel="noopener"><div class="ico">𝕏</div><strong>X</strong><small>Berita dan percakapan</small></a>
+  <a class="tile" href="https://www.reddit.com/" target="_blank" rel="noopener"><div class="ico">◉</div><strong>Reddit</strong><small>Komunitas dan diskusi</small></a>
+  <a class="tile" href="https://discord.com/app" target="_blank" rel="noopener"><div class="ico">☏</div><strong>Discord</strong><small>Server dan obrolan</small></a>
+ </section>
+
+ <div class="section-head"><h2>Game Web</h2><span>Tanpa instalasi aplikasi</span></div>
+ <section class="grid">
+  <a class="tile" href="https://poki.com/" target="_blank" rel="noopener"><div class="ico">🎮</div><strong>Poki</strong><small>Koleksi game browser</small></a>
+  <a class="tile" href="https://www.crazygames.com/" target="_blank" rel="noopener"><div class="ico">🕹</div><strong>CrazyGames</strong><small>Game kasual dan aksi</small></a>
+  <a class="tile" href="https://lichess.org/" target="_blank" rel="noopener"><div class="ico">♟</div><strong>Lichess</strong><small>Catur online</small></a>
+ </section>
+
+ <div class="section-head"><h2>Device Tools</h2><span>Perlu izin browser</span></div>
+ <section class="grid">
+  <button class="tile" onclick="openPanel('cameraPanel')"><div class="ico">📷</div><strong>Buka Kamera</strong><small>Pratinjau kamera jika diizinkan</small></button>
+  <button class="tile" onclick="document.getElementById('galleryInput').click()"><div class="ico">▧</div><strong>Galeri Foto</strong><small>Pilih gambar/video dari perangkat</small></button>
+  <button class="tile" onclick="document.getElementById('fileInput').click()"><div class="ico">📁</div><strong>File Manager</strong><small>Pilih file melalui picker sistem</small></button>
+ </section>
+
+ <section class="panel" id="cameraPanel">
+  <h3>📷 Kamera</h3><p class="hint">Tekan mulai lalu izinkan akses kamera. Kamera biasanya memerlukan HTTPS atau localhost; dukungan browser iPhone dapat berbeda.</p>
+  <div class="row"><button class="btn" id="startCam">Mulai kamera</button><button class="btn secondary" id="stopCam">Matikan</button><button class="btn secondary" id="snap">Ambil foto</button></div>
+  <video id="video" class="preview" autoplay playsinline muted style="display:none"></video>
+  <canvas id="canvas" class="preview" style="display:none"></canvas><p id="cameraMsg" class="hint" aria-live="polite"></p>
+ </section>
+ <section class="panel" id="galleryPanel"><h3>🖼️ Pratinjau Galeri</h3><p class="hint">File yang kamu pilih hanya ditampilkan di halaman ini; tidak diunggah ke server.</p><div id="galleryList" class="filelist"></div><img id="imagePreview" class="preview" alt="Pratinjau gambar pilihan" style="display:none"><video id="videoPreview" class="preview" controls playsinline style="display:none"></video></section>
+ <section class="panel" id="filesPanel"><h3>📁 File yang dipilih</h3><p class="hint">Browser hanya memberi akses ke file yang kamu pilih sendiri, bukan seluruh penyimpanan iPhone.</p><div id="filesList" class="filelist"></div></section>
+ <input id="galleryInput" type="file" accept="image/*,video/*" multiple hidden>
+ <input id="fileInput" type="file" multiple hidden>
+
+ <aside class="notice"><div class="info">i</div><div><strong>Privasi & batasan iPhone</strong><p>Kamera memerlukan izin dan koneksi aman. Galeri dan file dibuka lewat pemilih file bawaan. Situs web tidak bisa membaca semua file atau membuka kamera secara diam-diam. Shortcut web membuka layanan masing-masing.</p></div></aside>
+ <div class="bottom">iOS Help Hub · Portal independen<br>Menu kamera, galeri, dan file berjalan dengan izin browser.</div>
+</main>
+<script>
+const clock=document.getElementById('clock');function setClock(){clock.textContent=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit',hour12:false})}setClock();
+function openPanel(id){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('show'));const p=document.getElementById(id);p.classList.add('show');p.scrollIntoView({behavior:'smooth',block:'nearest'})}
+let stream=null;
+const video=document.getElementById('video'), canvas=document.getElementById('canvas'), msg=document.getElementById('cameraMsg');
+document.getElementById('startCam').addEventListener('click',async()=>{try{if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw new Error('Browser atau konteks halaman ini tidak mendukung kamera. Buka melalui HTTPS atau localhost.');stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});video.srcObject=stream;video.style.display='block';canvas.style.display='none';msg.textContent='Kamera aktif. Tekan Ambil foto untuk membuat snapshot.'}catch(e){msg.textContent='Kamera tidak dapat dibuka: '+e.message+' Pastikan izin kamera diberikan dan halaman dibuka lewat HTTPS.'}});
+document.getElementById('stopCam').addEventListener('click',()=>{if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}video.srcObject=null;video.style.display='none';msg.textContent='Kamera dimatikan.'});
+document.getElementById('snap').addEventListener('click',()=>{if(!stream||!video.videoWidth){msg.textContent='Mulai kamera terlebih dahulu.';return}canvas.width=video.videoWidth;canvas.height=video.videoHeight;canvas.getContext('2d').drawImage(video,0,0);canvas.style.display='block';msg.textContent='Foto pratinjau dibuat. Untuk menyimpan, tekan lama gambar jika browser mendukungnya.'});
+function formatSize(n){return n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(2)+' MB'}
+document.getElementById('galleryInput').addEventListener('change',e=>{const files=[...e.target.files];openPanel('galleryPanel');const list=document.getElementById('galleryList'),img=document.getElementById('imagePreview'),vid=document.getElementById('videoPreview');list.textContent=files.length?files.map(f=>`${f.name} — ${formatSize(f.size)}`).join('\\n'):'Belum ada file dipilih';list.style.whiteSpace='pre-line';img.style.display='none';vid.style.display='none';const f=files[0];if(!f)return;const url=URL.createObjectURL(f);if(f.type.startsWith('image/')){img.src=url;img.style.display='block'}else if(f.type.startsWith('video/')){vid.src=url;vid.style.display='block'}});
+document.getElementById('fileInput').addEventListener('change',e=>{const files=[...e.target.files];openPanel('filesPanel');const list=document.getElementById('filesList');list.textContent=files.length?files.map(f=>`${f.name} — ${formatSize(f.size)}${f.type?' — '+f.type:''}`).join('\\n'):'Belum ada file dipilih';list.style.whiteSpace='pre-line'});
+</script>
+</body>
+</html>
